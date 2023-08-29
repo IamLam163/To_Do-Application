@@ -7,7 +7,6 @@ import router from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
 import taskRouter from "./routes/todoRoutes.js";
 import path from "path";
-import { createProxyMiddleware } from "http-proxy-middleware";
 
 dotenv.config();
 
@@ -61,7 +60,7 @@ app.listen(port, () =>
 );
 
 if (process.env.NODE_ENV === "production") {
-  const reactBuildPath = path.join(__dirname, "front-end/build");
+  const reactBuildPath = path.join(__dirname, "build");
 
   app.use(express.static(reactBuildPath));
 
