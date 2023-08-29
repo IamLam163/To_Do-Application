@@ -85,24 +85,55 @@ export default function HeroContent() {
         zIndex={0}
       />
       <Container className={classes.container}>
-        <Title className={classes.title}>TO_DO Task Manager</Title>
-        <Text className={classes.description} size="xl" mt="xl">
-          To-Do application offers an essential tool for effective daily
-          activity management. With its user-friendly interface, You can
-          streamline tasks, priorities, and goals. It enables efficient
-          organization, aiding users in staying focused and ensuring nothing
-          slips through the cracks.{" "}
-        </Text>
+        <div style={{ marginBottom: rem(40) }}>
+          <Title className={classes.title}>TO_DO Task Manager</Title>
+          <Text className={classes.description} size="xl" mt="xl">
+            To-Do application offers an essential tool for effective daily
+            activity management. With its user-friendly interface, You can
+            streamline tasks, priorities, and goals. It enables efficient
+            organization, aiding users in staying focused and ensuring nothing
+            slips through the cracks.{" "}
+          </Text>
+          <Button
+            variant="gradient"
+            size="xl"
+            radius="xl"
+            className={classes.control}
+            onClick={() => navigate("/login")}
+          >
+            Get started
+          </Button>
+        </div>
 
-        <Button
-          variant="gradient"
-          size="xl"
-          radius="xl"
-          className={classes.control}
-          onClick={() => navigate("/login")}
-        >
-          Get started
-        </Button>
+        <div style={{ marginBottom: rem(40) }}>
+          <Title className={classes.title} style={{ fontSize: rem(40) }}>
+            Check Project On Github
+          </Title>
+          <Text className={classes.description} size="xl" mt="xl">
+            The application uses the MERN Stack, it is writtten entirely in
+            Javascript. It is a basic CRUD application that gives the user the
+            ability to Create, Update and Delete tasks, the tasks are safely
+            stored server side and and API call is needed to load the tasks.
+            This ensures no manipulation can be carried out on the data Client
+            side. For more Information Click the link below.
+          </Text>
+          <a
+            href="https://github.com/IamLam163/To_Do-Application"
+            style={{
+              display: "inline-block",
+              marginTop: `calc(${classes.control.marginTop} + ${rem(20)})`,
+              padding: `${rem(12)} ${rem(24)}`,
+              background: "green",
+              color: "white",
+              borderRadius: rem(8),
+              textDecoration: "none",
+              fontWeight: 600,
+              fontSize: rem(18),
+            }}
+          >
+            View on GitHub
+          </a>
+        </div>
       </Container>
     </div>
   );
