@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import router from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
 import taskRouter from "./routes/todoRoutes.js";
+import path from "path";
 
 dotenv.config();
 
@@ -54,3 +55,13 @@ app.use("/todo", taskRouter);
 app.listen(port, () =>
   console.log(`Server is running on http://localhost:${port}`),
 );
+
+if (process.env.NODE_ENV === "production") {
+  const reactBuildPath = path.join(__dirname, "front-end/build");
+
+  app.use(express.static(reactBuildPath));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(reactBuildPath, "index.html"));
+  });
+}
