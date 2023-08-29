@@ -22,12 +22,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/app/todo/:id" element={<Application />} />
+            <Route path="/todo/usertasks/:id" element={<Application />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
             <Route path="/todo" element={<Todo />} />
-            <Route path="/todo/:id" element={<Todo />} />
           </Routes>
         </BrowserRouter>
       </UserContextProvider>
