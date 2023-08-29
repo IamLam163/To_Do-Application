@@ -10,6 +10,9 @@ import path from "path";
 
 dotenv.config();
 
+const __filename = new URL(import.meta.url).pathname;
+const __dirname = path.dirname(__filename);
+
 const app = express();
 const port = 7000;
 
@@ -30,7 +33,7 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: function (origin, callback) {
+    origin: function(origin, callback) {
       if (allowedOrigins.includes(origin) || !origin) {
         callback(null, true);
       } else {
