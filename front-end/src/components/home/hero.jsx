@@ -16,10 +16,11 @@ const useStyles = createStyles((theme) => ({
       "url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    minHeight: "100vh",
   },
 
   container: {
-    height: rem(700),
+    height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
