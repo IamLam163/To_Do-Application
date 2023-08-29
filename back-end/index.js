@@ -7,6 +7,7 @@ import router from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
 import taskRouter from "./routes/todoRoutes.js";
 import path from "path";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
 dotenv.config();
 
@@ -33,7 +34,7 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: function(origin, callback) {
+    origin: function (origin, callback) {
       if (allowedOrigins.includes(origin) || !origin) {
         callback(null, true);
       } else {
@@ -64,7 +65,7 @@ if (process.env.NODE_ENV === "production") {
 
   app.use(express.static(reactBuildPath));
 
-  app.get("*", (req, res) => {
+  app.get("/*", (req, res) => {
     res.sendFile(path.join(reactBuildPath, "index.html"));
   });
 }

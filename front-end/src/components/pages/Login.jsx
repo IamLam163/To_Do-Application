@@ -51,8 +51,7 @@ export default function Login() {
         localStorage.setItem("responseData", JSON.stringify(responseData));
         toast.success("Login Successful");
         console.log("User_Id:", responseData.user.id);
-        navigate(`/todo/usertasks`);
-        // navigate(`/todo/usertasks/${responseData.user.id}`);
+        navigate(`/todo/usertasks/${responseData.user.id}`);
       }
     } catch (error) {
       console.log(error);
