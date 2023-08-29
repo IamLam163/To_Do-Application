@@ -40,6 +40,7 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(60),
     fontWeight: 900,
     lineHeight: 1.1,
+    marginTop: rem(20),
 
     [theme.fn.smallerThan("sm")]: {
       fontSize: rem(40),
@@ -55,6 +56,7 @@ const useStyles = createStyles((theme) => ({
   description: {
     color: theme.white,
     maxWidth: 600,
+    marginTop: rem(20),
 
     [theme.fn.smallerThan("sm")]: {
       maxWidth: "100%",
