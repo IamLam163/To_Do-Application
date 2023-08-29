@@ -21,11 +21,15 @@ mongoose
     console.log("Database connection failed", err.toString());
   });
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:5173"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://to-do-application-swart.vercel.app",
+];
 
 app.use(
   cors({
-    origin: function(origin, callback) {
+    origin: function (origin, callback) {
       if (allowedOrigins.includes(origin) || !origin) {
         callback(null, true);
       } else {

@@ -10,7 +10,7 @@ import Register from "./components/pages/Register.jsx";
 import Logout from "./components/pages/Logout.jsx";
 import Application from "./components/pages/application.jsx";
 
-axios.defaults.baseURL = "http://localhost:7000";
+axios.defaults.baseURL = "https://my-to-do-api.onrender.com/";
 axios.defaults.withCredentials = true;
 
 function App() {
