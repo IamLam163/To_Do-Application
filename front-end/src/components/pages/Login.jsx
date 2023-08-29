@@ -111,6 +111,16 @@ export default function Login() {
             Sign in
           </Button>
         </form>
+        <Text color="dimmed" size="sm" align="center" mt={5}>
+          To go Back Home, Click {" "}
+          <Anchor
+            size="sm"
+            component="button"
+            onClick={() => navigate("/")}
+          >
+            Home
+          </Anchor>
+        </Text>
       </Paper>
     </Container>
   );
