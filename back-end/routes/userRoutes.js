@@ -14,9 +14,9 @@ router.use(
   cors({
     credentials: true,
     origin: [
+      "https://to-do-application-swart.vercel.app",
       "http://localhost:3000",
       "http://localhost:5173",
-      "https://to-do-application-swart.vercel.app",
     ],
   }),
 );
