@@ -43,6 +43,7 @@ export default function Login() {
 
       const { data: responseData } = response;
       console.log("Response Data:", responseData);
+
       if (responseData.error) {
         toast.error(responseData.error);
       } else {
@@ -113,12 +114,8 @@ export default function Login() {
           </Button>
         </form>
         <Text color="dimmed" size="sm" align="center" mt={5}>
-          To go Back Home, Click {" "}
-          <Anchor
-            size="sm"
-            component="button"
-            onClick={() => navigate("/")}
-          >
+          To go Back Home, Click{" "}
+          <Anchor size="sm" component="button" onClick={() => navigate("/")}>
             Home
           </Anchor>
         </Text>
