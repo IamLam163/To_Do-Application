@@ -13,7 +13,11 @@ const router = express.Router();
 router.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "http://localhost:5173" "https://to-do-application-swart.vercel.app"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://to-do-application-swart.vercel.app",
+    ],
   }),
 );
 
