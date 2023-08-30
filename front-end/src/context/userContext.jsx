@@ -42,7 +42,10 @@ export function UserContextProvider({ children }) {
     if (!confirmed) return;
 
     try {
-      await axios.get("https://my-to-do-api.onrender.com/logout");
+      await axios.get(
+        "https://my-to-do-api.onrender.com/logout" ||
+        "http://localhost:7000/logout",
+      );
       // Clear local storage
       localStorage.clear();
       setUser(null);
@@ -56,7 +59,8 @@ export function UserContextProvider({ children }) {
   const loginUser = async (email, password) => {
     try {
       const { data } = await axios.post(
-        "https://my-to-do-api.onrender.com/login",
+        "https://my-to-do-api.onrender.com/login" ||
+        "http://localhost:7000/login",
         {
           email,
           password,

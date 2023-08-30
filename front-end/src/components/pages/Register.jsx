@@ -35,7 +35,8 @@ export default function Register() {
     try {
       setLoading(true);
       const { data: responseData } = await axios.post(
-        "https://my-to-do-api.onrender.com/register",
+        "https://my-to-do-api.onrender.com/register" ||
+        "http://localhost:7000/register",
         {
           name,
           email,
