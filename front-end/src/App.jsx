@@ -11,7 +11,8 @@ import Logout from "./components/pages/Logout.jsx";
 import Application from "./components/pages/application.jsx";
 import { UserContextProvider } from "./context/userContext.jsx";
 
-axios.defaults.baseURL = "https://my-to-do-api.onrender.com/";
+// axios.defaults.baseURL = "https://my-to-do-api.onrender.com/";
+axios.defaults.baseURL = "https://localhost:7000";
 axios.defaults.withCredentials = true;
 
 function App() {

@@ -33,13 +33,10 @@ export default function Login() {
 
     try {
       setLoading(true);
-      const response = await axios.post(
-        "https://my-to-do-api.onrender.com/login",
-        {
-          email,
-          password,
-        },
-      );
+      const response = await axios.post("/login", {
+        email,
+        password,
+      });
 
       const { data: responseData } = response;
       console.log("Response Data:", responseData);
