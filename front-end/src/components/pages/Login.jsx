@@ -34,7 +34,8 @@ export default function Login() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://my-to-do-api.onrender.com/login" || "http://localhost:7000/login",
+        "https://my-to-do-api.onrender.com/login" ||
+        "http://localhost:7000/login",
         {
           email,
           password,
@@ -46,6 +47,7 @@ export default function Login() {
 
       if (responseData.error) {
         toast.error(responseData.error);
+        setLoading(false);
       } else {
         setData({ email: "", password: "" });
         setLoading(false);
@@ -57,8 +59,6 @@ export default function Login() {
       }
     } catch (error) {
       console.log(error);
-      setLoading(false);
-      toast.error("Login failed. Please try again.");
     }
   };
 
@@ -109,8 +109,9 @@ export default function Login() {
               Forgot password?
             </Anchor>
           </Group>
-          <Button fullWidth mt="xl" type="submit">
-            Sign in
+          <Button fullWidth mt="xl" type="submit" disabled={loading}>
+            {" "}
+            {loading ? "Signing in..." : "Sign in"}
           </Button>
         </form>
         <Text color="dimmed" size="sm" align="center" mt={5}>
