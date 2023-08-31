@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function RenameTaskButton({ taskId, onTaskRename }) {
+function RenameTaskButton({ taskId, initialTaskName, onTaskRename }) {
   const [renameMode, setRenameMode] = useState(false);
-  const [newTaskName, setNewTaskName] = useState("");
+  const [newTaskName, setNewTaskName] = useState(initialTaskName);
 
   const handleRename = async () => {
     try {
@@ -18,6 +18,17 @@ function RenameTaskButton({ taskId, onTaskRename }) {
     }
   };
 
+  const renameButtonStyle = {
+    fontSize: "13px",
+    transition: "transform 0.2s ease",
+    marginLeft: "auto",
+    backgroundColor: "green",
+  };
+
+  const renameButtonHoverStyle = {
+    transform: "scale(1.2)",
+  };
+
   return (
     <div>
       {renameMode ? (
@@ -30,8 +41,21 @@ function RenameTaskButton({ taskId, onTaskRename }) {
           <button onClick={handleRename}>Save</button>
         </div>
       ) : (
-        <button onClick={() => setRenameMode(true)}>Rename</button>
+        <button
+          onClick={() => setRenameMode(true)}
+          style={renameButtonStyle}
+          onMouseOver={(e) =>
+            Object.assign(e.target.style, renameButtonHoverStyle)
+          }
+          onMouseOut={(e) =>
+            Object.assign(e.target.style, { transform: "scale(1)" })
+          }
+        >
+          Rename
+        </button>
       )}
     </div>
   );
 }
+
+export default RenameTaskButton;
